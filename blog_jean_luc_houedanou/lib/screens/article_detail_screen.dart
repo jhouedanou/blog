@@ -6,8 +6,7 @@ import '../models/article.dart';
 class ArticleDetailScreen extends StatelessWidget {
   final Article article;
 
-  ArticleDetailScreen({required this.article});
-
+  ArticleDetailScreen({Key? key, required this.article}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +15,7 @@ class ArticleDetailScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -27,17 +26,17 @@ class ArticleDetailScreen extends StatelessWidget {
                   height: 200,
                   fit: BoxFit.cover,
                 ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Text(
                 article.title,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 article.pubDate.toString(),
                 style: Theme.of(context).textTheme.bodySmall,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Html(
                 data: article.content,
                 onLinkTap: (url, _, __, ___) async {

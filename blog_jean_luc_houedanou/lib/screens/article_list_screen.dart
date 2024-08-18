@@ -5,6 +5,7 @@ import '../widgets/article_list_item.dart';
 import 'article_detail_screen.dart';
 
 class ArticleListScreen extends StatefulWidget {
+  const ArticleListScreen({Key? key}) : super(key: key);
   @override
   _ArticleListScreenState createState() => _ArticleListScreenState();
 }
@@ -31,7 +32,7 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
         _isLoading = false;
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Erreur lors du chargement des articles')),
+        const SnackBar(content: Text('Erreur lors du chargement des articles')),
       );
     }
   }
@@ -40,16 +41,16 @@ class _ArticleListScreenState extends State<ArticleListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Articles'),
+        title: const Text('Articles'),
         actions: [
           IconButton(
-            icon: Icon(Icons.refresh),
+            icon: const Icon(Icons.refresh),
             onPressed: _fetchArticles,
           ),
         ],
       ),
       body: _isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : RefreshIndicator(
               onRefresh: _fetchArticles,
               child: ListView.builder(

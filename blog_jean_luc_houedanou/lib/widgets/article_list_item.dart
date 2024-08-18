@@ -5,8 +5,8 @@ class ArticleListItem extends StatelessWidget {
   final Article article;
   final VoidCallback onTap;
 
-  ArticleListItem({required this.article, required this.onTap});
-
+  ArticleListItem({Key? key, required this.article, required this.onTap})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -17,7 +17,7 @@ class ArticleListItem extends StatelessWidget {
               height: 80,
               fit: BoxFit.cover,
             )
-          : Icon(Icons.article),
+          : const Icon(Icons.article),
       title: Text(
         article.title,
         maxLines: 2,
@@ -28,7 +28,7 @@ class ArticleListItem extends StatelessWidget {
         maxLines: 2,
         overflow: TextOverflow.ellipsis,
       ),
-      trailing: Icon(Icons.arrow_forward_ios),
+      trailing: const Icon(Icons.arrow_forward_ios),
       onTap: onTap,
     );
   }

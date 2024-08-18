@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'article_list_screen.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -10,7 +11,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => ArticleListScreen()),
@@ -29,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
               'https://i0.wp.com/www.houedanou.com/wp-content/uploads/2019/02/logom.png',
               width: 200,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               'Le blog de Jean Luc Houedanou',
               style: Theme.of(context).textTheme.headlineMedium,
